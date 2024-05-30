@@ -112,7 +112,7 @@ def store_user(request):
         return redirect('/create')
 
 def show_user(request, user_id):
-    user = User.objects.get(pk=user_id) #select from mysql
+    user = User.objects.get(pk=user_id)
 
     context = {
         'user': user,
@@ -122,7 +122,7 @@ def show_user(request, user_id):
 
 def edit_user(request, user_id):
     genders = Gender.objects.all()
-    user = User.objects.get(pk=user_id) #select a specfic object from mysql
+    user = User.objects.get(pk=user_id)
     context = {
         'user': user,
         'genders':genders,
@@ -136,34 +136,26 @@ def update_user(request, user_id):
     lastName = request.POST.get('last_name')
     age = request.POST.get('age')
     birthDate = request.POST.get('birth_date')
-    genderId = request.POST.get('gender_id')
+    genderid = request.POST.get('gender_id')
     username = request.POST.get('username')
 
-    User.objects.filter(pk=user_id).update(
-        first_name=firstName,
-        middle_name=middleName,
-        last_name=lastName,
-        age=age,
-        birth_date=birthDate,
-        gender_id=genderId,
-        username=username,
-        )
-    messages.success(request, 'success')
+    User.objects.filter(pk=user_id).update(first_name = firstName, middle_name = middleName, last_name = lastName, age = age, birth_date = birthDate, gender_id = genderid, username = username)
 
-    return redirect('/user')
+    messages.success(request, 'User successfully updated.')
+
+    return redirect ('/users')
+
 def delete_user(request, user_id):
-    user = User.objects.get(pk=user_id)  #select for mysql
+    user = User.objects.get(pk=user_id) 
+
     context = {
-        'users': user,
+        'user': user,
     }
-    
+
     return render(request, 'user/delete.html', context)
 
 def destroy_user(request, user_id):
-    User.objects.filter(pk=user_id).delete() #delete from mysql
-    messages.success(request, 'user successfully Deleted')
+    User.objects.filter(pk=user_id).delete()
+    messages.success(request, 'User successfully deleted.')
 
-    return redirect('/user')
-
-def main_page(request):
-    return render(request, 'interface/mainPage.html')
+    return redirect('/users')
