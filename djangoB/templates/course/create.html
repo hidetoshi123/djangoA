@@ -6,7 +6,8 @@ Create Course
 
 {% block content %}
 
-<div class="col-md-4 mx-auto mt-3 text-white bg-dark">
+{% include "include/navbar.html" %}
+<div class="col-md-4 mx-auto mt-3 text-black">
     <form action="/course/store" method="post">
         {% csrf_token %}
         <div class="mb-3">

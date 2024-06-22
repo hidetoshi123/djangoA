@@ -5,8 +5,8 @@ Edit Section
 {% endblock title %}
 
 {% block content %}
-
-<div class="col-md-4 mx-auto mt-3 text-white bg-dark">
+{% include "include/navbar.html" %}
+<div class="col-md-4 mx-auto mt-3 text-white bg-white">
     <form action="/section/update/{{ section.section_id }}" method="post">
         {% csrf_token %}
         <div class="mb-3">

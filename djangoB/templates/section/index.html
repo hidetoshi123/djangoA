@@ -8,11 +8,10 @@ List of Section
 
 {% include "include/navbar.html" %}
 <div class="mb-5"></div>
-<a href="/sections/create" class="btn btn-primary float-end mt-1 me-1">Add Section</a>
 {% include "include/messages.html" %}
-<div class="col-md-6 mx-auto text-white bg-dark py-5 px-5 rounded-4">
-    <div class="table-responsive bg-dark">
-        <table class="table table-hover table-dark table-striped">
+<div class="col-md-8 mx-auto rounded-5 pt-5 px-5 mt-5 bg-primary">
+    <div class="table-responsive bg-light">
+        <table class="table table-hover table-light table-striped">
             <thead>
                 <tr>
                     <th>Section ID</th>
@@ -40,7 +39,10 @@ List of Section
                 {% endfor %}
             </tbody>
         </table>
+        
     </div>
+    <a href="/sections/create" class="btn btn-success mx-auto my-4">Add Section</a>
 </div>
+
 
 {% endblock content %}
