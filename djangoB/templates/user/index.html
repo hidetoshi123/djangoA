@@ -1,11 +1,12 @@
 {% extends "layout/base.html" %}
 
 {% block title %}
-Users page
+user page
 {% endblock title %}
 
 {% block content %}
-<div>
+{% include "include/navbar.html" %}
+<div class="mb-5">
     <a href="/users/create" class="btn btn-primary float-end mt-1 me-1">Add User</a>
     <a href="/" class="btn btn-secondary float-end mt-1 me-1">Back</a>
 </div>

@@ -6,7 +6,7 @@ edit Gender
 
 {% block content %}
 
-<div class="col-md-6 mx-auto mt-3">
+<div class="col-md-4 mx-auto mt-3">
     <form action="/genders/update/{{gender.gender_id}}" method="post" >
         {% csrf_token %}
         <div class="mb-3">

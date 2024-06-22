@@ -1,0 +1,46 @@
+{% extends "layout/base.html" %}
+
+{% block title %}
+List of Section
+{% endblock title %}
+
+{% block content %}
+
+{% include "include/navbar.html" %}
+<div class="mb-5"></div>
+<a href="/sections/create" class="btn btn-primary float-end mt-1 me-1">Add Section</a>
+{% include "include/messages.html" %}
+<div class="col-md-6 mx-auto text-white bg-dark py-5 px-5 rounded-4">
+    <div class="table-responsive bg-dark">
+        <table class="table table-hover table-dark table-striped">
+            <thead>
+                <tr>
+                    <th>Section ID</th>
+                    <th>Section</th>
+                    <th>Date Created</th>
+                    <th>Date Updated</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for section in sections %}
+                    <tr>
+                        <td>{{ section.section_id }}</td>
+                        <td>{{ section.section }}</td>
+                        <td>{{ section.created_at }}</td>
+                        <td>{{ section.updated_at }}</td>
+                        <td>
+                            <div class="btn-group">
+                                <a href="/section/show/{{ section.section_id }}" class="btn btn-primary">View</a>                               
+                                <a href="/section/edit/{{ section.section_id }}" class="btn btn-success">Edit</a>
+                                <a href="/section/delete/{{ section.section_id }}" class="btn btn-danger">Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock content %}
