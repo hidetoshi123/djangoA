@@ -5,8 +5,9 @@ Create Gender
 {% endblock title %}
 
 {% block content %}
+{% include "include/navbar.html" %}
 
-<div class="col-md-6 mx-auto mt-3">
+<div class="col-md-4 mx-auto mt-3 text-white bg-primary py-3">
     <form action="/store_gender" method="post" >
         {% csrf_token %}
         <div class="mb-3">

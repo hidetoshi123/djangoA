@@ -45,7 +45,25 @@ Create Student
                 {% endfor %}
             </select>
         </div>
-        <div class="mb-3 mx-5 ">
+        <div class="mb-3 mx-5">
+            <label for="year_id">Level</label>
+            <select name="year_id" id="year_id" class="form-select">
+                <option value="">N/A</option>
+                {% for year in years %}
+                    <option value="{{ year.year_id }}">{{ year.year }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3 mx-5">
+            <label for="course_id">Course</label>
+            <select name="course_id" id="course_id" class="form-select">
+                <option value="">N/A</option>
+                {% for course in courses %}
+                    <option value="{{ course.course_id }}">{{ course.course }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-2 mx-5 ">
             <label for="section_id">Section</label>
             <select name="section_id" id="section_id" class="form-select">
                 <option value="">N/A</option>
@@ -54,8 +72,9 @@ Create Student
                 {% endfor %}
             </select>
         </div>
-        <div class="mb-3 mx-5 my-5">
+        <div class="mx-5 my-5">
             <button type="submit" class="btn btn-success float-end col-12 col-md-3">Save</button>
+            <a href="/students" class="btn btn-secondary float-end">Back</a>
         </div>
     </form>
 </div>

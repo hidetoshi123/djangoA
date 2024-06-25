@@ -5,15 +5,15 @@ Create YearLevel
 {% endblock title %}
 
 {% block content %}
-
-<div class="col-md-4 mx-auto mt-3 text-white bg-dark">
+{% include "include/navbar.html" %}
+<div class="col-md-4 mx-auto mt-3 text-white bg-primary py-3">
     <form action="/year/store" method="post">
         {% csrf_token %}
         <div class="mb-3">
-            <label for="year">YearLevel</label>
+            <label for="year">Year Level</label>
             <input type="text" class="form-control" id="year" name="year" />
         </div>
-        <button type="submit" class="btn btn-success float-end col-12 col-md-3">Save YearLevel</button>
+        <button type="submit" class="btn btn-success float-end col-12 col-md-3">Save</button>
         <a href="/years" class="btn btn-secondary float-end col-12 col-md-3 me-1"> Back</a>
     </form>
 </div>

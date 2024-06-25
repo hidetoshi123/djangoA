@@ -9,11 +9,9 @@ List of Gender
 {% include "include/navbar.html" %}
 <div class="mb-5"></div>
 
-<a href="genders/create" class="btn btn-primary float-end mt-1 me-1"> Add Gender</a>
-<a href="/" class="btn btn-secondary float-end mt-1 me-1">Back</a>
 {% include 'include/messages.html' %}
-<div class="mx-auto p-2" style="width: 1000px;">
-    <div class="table-responsive">
+<div class="col-md-8 mx-auto rounded-5 pt-5 px-5 mt-5 bg-primary">
+    <div class="table-responsive bg-white text-white">
         <table class="table table-hover">
             <thead>
                 <tr>
@@ -44,6 +42,7 @@ List of Gender
             </tbody>
         </table>
     </div>
+    <a href="genders/create" class="btn btn-success float-end my-4"> Add Gender</a>
 </div>
 
 {% endblock content %}
