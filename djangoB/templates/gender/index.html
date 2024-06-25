@@ -11,8 +11,8 @@ List of Gender
 
 {% include 'include/messages.html' %}
 <div class="col-md-8 mx-auto rounded-5 pt-5 px-5 mt-5 bg-primary">
-    <div class="table-responsive bg-white text-white">
-        <table class="table table-hover">
+    <div class="table bg-white text-white">
+        <table class="table table-hover table-striped">
             <thead>
                 <tr>
                     <th>Gender ID</th>
@@ -36,13 +36,12 @@ List of Gender
                             <a href="genders/delete/{{gender.gender_id}}" class="btn btn-danger">Delete</a>
                         </div>
                     </td>
-                </tr>
-                
+                </tr>                
                 {% endfor %}
             </tbody>
         </table>
     </div>
-    <a href="genders/create" class="btn btn-success float-end my-4"> Add Gender</a>
+    <a href="genders/create" class="btn btn-success float-end mt-2 mb-4"> Add Gender</a>
 </div>
 
 {% endblock content %}

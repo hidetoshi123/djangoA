@@ -20,7 +20,7 @@ def creategender(request):
 def storegender(request):
     gender = request.POST.get('gender')
     Gender.objects.create(gender=gender)
-    messages.success(request,'Successfully Save!')
+    messages.success(request,'Successfully Saved!')
     return redirect('/genders')
 
 def showgender(request, gender_id):
@@ -147,7 +147,7 @@ def create_year(request):
 def store_year(request):
     year = request.POST.get('year')
     Year.objects.create(year=year) 
-    messages.success(request, 'Years succesfully saved.')
+    messages.success(request, 'Year Level succesfully saved.')
     return redirect('/years')
     
 def show_year(request, year_id):
@@ -172,7 +172,7 @@ def update_year(request, year_id):
     year = request.POST.get('year')
 
     Year.objects.filter(pk=year_id).update(year=year)
-    messages.success(request, 'Gender successfully updated.')
+    messages.success(request, 'Year Level successfully updated.')
 
     return redirect('/years')
 
@@ -187,7 +187,7 @@ def delete_year(request, year_id):
 
 def destroy_year(request, year_id):
     Year.objects.filter(pk=year_id).delete()
-    messages.success(request, 'YearLevel successfully deleted.')
+    messages.success(request, 'Year Level successfully deleted.')
 
     return redirect('/years')
 
